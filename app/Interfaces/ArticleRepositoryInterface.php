@@ -2,7 +2,7 @@
 
 namespace App\Interfaces;
 
-interface ArticleRepositoryInterface
+interface ArticleRepositoryInterface extends BaseInterface
 {
     public function getAllArticles();
 

@@ -11,8 +11,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class ArticleRepository implements ArticleRepositoryInterface
 {
+    /**
+     * @var Model|Article
+     */
     private Model $model;
 
+    /**
+     *
+     */
     public function __construct()
     {
         $this->model = new Article();
@@ -79,12 +85,22 @@ class ArticleRepository implements ArticleRepositoryInterface
      */
     public function getAllArticlesWithCategories(bool $paginate = false, int $perPage = 10): Collection|LengthAwarePaginator|array
     {
-        $articles =  $this->model->with('categories');
+        $articles = $this->model->with('categories');
 
         if ($paginate) {
             return $articles->paginate($perPage);
         }
 
         return $articles->get();
+    }
+
+    public function findById()
+    {
+        // TODO: Implement findById() method.
+    }
+
+    public function get()
+    {
+        // TODO: Implement get() method.
     }
 }

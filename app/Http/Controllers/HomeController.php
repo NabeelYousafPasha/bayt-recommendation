@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Interfaces\ArticleRepositoryInterface;
+use App\Services\ArticleService;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -10,13 +10,16 @@ use Illuminate\Contracts\View\View;
 class HomeController extends Controller
 {
     /**
-     * @var ArticleRepositoryInterface
+     * @var ArticleService
      */
-    private ArticleRepositoryInterface $articleRepository;
+    private ArticleService $articleService;
 
-    public function __construct(ArticleRepositoryInterface $articleRepository)
+    /**
+     * @param ArticleService $articleService
+     */
+    public function __construct(ArticleService $articleService)
     {
-        $this->articleRepository = $articleRepository;
+        $this->articleService = $articleService;
     }
 
     /**
@@ -24,7 +27,7 @@ class HomeController extends Controller
      */
     public function index(): \Illuminate\Foundation\Application|View|Factory|Application
     {
-        $articles = $this->articleRepository->getAllArticlesWithCategories(paginate: true, perPage: 10);
+        $articles = $this->articleService->get();
 
         return view('welcome', compact('articles'));
     }
