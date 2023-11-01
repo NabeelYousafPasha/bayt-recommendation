@@ -1,5 +1,35 @@
-### Assignment: Building a Recommendation System
+### Nabeel Yousaf Pasha
 
+Following are the setps to setup the project
+
+#### <u>Environment</u>
+| Tech        |  Version  |
+| -----       |:---------:|
+| PHP         | `^8.1`  |
+| LARAVEL     | `^10.10` |
+
+#### <u>Setup</u>
+
+`1.` Clone Repository `git@github.com:NabeelYousafPasha/bayt-recommendation.git` <br>
+`2.` Run `cd bayt-recommendation` <br>
+`3.` Run `composer install` <br>
+`4.` Run `npm install` <br>
+`5.` Run `npm run dev` <br>
+
+#### <u>Database Migration and Seeder</u>
+
+`1.` Update your .env file <br>
+`2.` Run `php artisan migrate` <br>
+`3.` Run `php artisan db:seed` <br>
+
+#### <u>Important Directories/Files to Reivew</u>
+
+`1.` `app/Traits/*` <br>
+`2.` `app/Observers/ModelVisitObserver.php` <br>
+`3.` `app/Entities/ArticleEntity.php` <br>
+
+
+### Assignment: Building a Recommendation System
 
 #### Assignment Overview:
 
