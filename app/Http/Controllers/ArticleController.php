@@ -48,6 +48,8 @@ class ArticleController extends Controller
 
                 'ratingCount' => $article->ratingsCount(),
                 'ratingAvg' => number_format($article->ratingsAvg()),
+
+                'visitCount' => $article->visitsCount(),
             ]);
     }
 
