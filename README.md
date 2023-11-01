@@ -1,66 +1,71 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+### Assignment: Building a Recommendation System
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
 
-## About Laravel
+#### Assignment Overview:
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Your task is to develop a recommendation system using PHP and the
+Laravel framework that suggests relevant content to users based on their
+preferences and behavior.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+#### Requirements:
+1. Clean Code in Laravel:
+   - Write clean, well-documented PHP code within the Laravel
+      framework. Follow Laravel's coding conventions and best practices. 
+   - Ensure meaningful variable and function names. 
+   - Implement proper error handling.
+   
+2. Design Patterns in Laravel:
+   - Utilize advanced design patterns within Laravel, such as the
+      Repository pattern, the Service pattern, and the Observer pattern.
+   - Explain your use of these patterns within your code.
+3. Reusable Modules in Laravel:
+   - Design your recommendation system within Laravel as a set of
+   reusable services and components that can be easily integrated into
+   different Laravel applications.
+   - Include Laravel unit tests to demonstrate the functionality and
+   reusability of your components.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+4. Performance Optimization in Laravel:
+   - Optimize the recommendation algorithm for speed and resource
+   efficiency within the Laravel framework.
+   - Utilize Laravel's built-in caching and database optimization features
+   to improve performance.
+   
+#### Assignment Details:
+   Create a Laravel-based recommendation system that suggests content
+   (e.g., articles, videos, music, products) to users based on their historical
+   preferences and behavior. 
+   Your system should allow users to:
+   - Register and login using Laravel's built-in authentication.
+   - Rate or interact with content.
+   - Receive personalized content recommendations.
+   - View their recommendation history.
+   - Administer and manage user accounts and content items using Laravel's features.
+   
+#### Submission Instructions:
+   - Submit your Laravel project in a Git repository hosted on platforms
+   like GitHub, GitLab, or Bitbucket.
+   - Provide clear documentation on how to set up and run your Laravel
+   recommendation system.
+   - Preferable to be dockerize.
+   - Include a README.md that explains your design choices, the Laravel design patterns you used, and any performance optimizations made within the framework.
 
-## Learning Laravel
+#### Assessment Criteria: 
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Your assignment will be evaluated based on:
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+- Clean PHP code written within the Laravel framework. 
+- Effective use of advanced design patterns within Laravel.
+- The modularity and reusability of your Laravel components and
+services.
+- Performance optimization within the Laravel framework.
+- The correctness and completeness of the implemented functionality.
+- This assignment focuses on assessing a candidate's skills with PHP
+and the Laravel framework, making it suitable for positions where
+Laravel expertise is essential.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-## Laravel Sponsors
+Good luck with the assignment, and I am looking forward to hearing from you,
+please let me know If you have any questions.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+#### Deadline 72 Hours.
