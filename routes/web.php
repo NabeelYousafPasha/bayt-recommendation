@@ -45,4 +45,6 @@ Route::group([
 ], function () {
    Route::get('/', [ArticleController::class, 'index'])->name('index');
    Route::get('/{article}', [ArticleController::class, 'show'])->name('show');
+
+   Route::get('/{article}/rate', [ArticleController::class, 'rate'])->name('rate');
 });

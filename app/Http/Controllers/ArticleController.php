@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ModelRatingRequest;
 use App\Models\Article;
 use App\Services\ArticleService;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Foundation\Application;
-use Illuminate\Http\Request;
 
 class ArticleController extends Controller
 {
@@ -38,50 +38,23 @@ class ArticleController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
      * Display the specified resource.
      */
     public function show(Article $article)
     {
-        //
+        return view('article.show')
+            ->with([
+                'article' => $article,
+
+                'ratingCount' => $article->ratingsCount(),
+                'ratingAvg' => number_format($article->ratingsAvg()),
+            ]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Article $article)
+    public function rate(ModelRatingRequest $request, Article $article)
     {
-        //
-    }
+        $article->rateOnce($article->user_id, $request->rating);
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Article $article)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Article $article)
-    {
-        //
+        return redirect()->route('articles.show', ['article' => $article->id]);
     }
 }
