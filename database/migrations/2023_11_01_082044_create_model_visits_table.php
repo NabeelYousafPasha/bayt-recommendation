@@ -11,13 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('article_category', function (Blueprint $table) {
+        Schema::create('model_visits', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('article_id')->unsigned();
-            $table->foreignId('category_id')->unsigned();
+            $table->morphs('visitable');
+            $table->foreignId('user_id')->constrained('users');
+            $table->unsignedInteger('value')->default(0);
             $table->timestamps();
-
-            $table->index(['article_id', 'category_id']);
         });
     }
 
@@ -26,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('article_category');
+        Schema::dropIfExists('model_visits');
     }
 };

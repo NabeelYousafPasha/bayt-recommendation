@@ -8,20 +8,20 @@ use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
+use App\Repositories\BaseRepository as Repository;
 
-class ArticleRepository implements ArticleRepositoryInterface
+class ArticleRepository extends Repository implements ArticleRepositoryInterface
 {
     /**
      * @var Model|Article
      */
     private Model $model;
 
-    /**
-     *
-     */
+
     public function __construct()
     {
         $this->model = new Article();
+        parent::__construct($this->model);
     }
 
     /**
@@ -37,16 +37,28 @@ class ArticleRepository implements ArticleRepositoryInterface
             return $articles->paginate($perPage);
         }
 
-        return $articles->get();
+        return $this->get();
+    }
+
+    /**
+     * @param array $data
+     *
+     * @return mixed
+     */
+    public function createArticle(array $data): mixed
+    {
+        return $this->create($data);
     }
 
     /**
      * @param $articleId
+     * @param array $newDetails
+     *
      * @return mixed
      */
-    public function getArticleById($articleId): mixed
+    public function updateArticle($articleId, array $newDetails): mixed
     {
-        return $this->model->findOrFail(decryptId($articleId));
+        return $this->update(decryptId($articleId), $newDetails);
     }
 
     /**
@@ -55,27 +67,7 @@ class ArticleRepository implements ArticleRepositoryInterface
      */
     public function deleteArticle($articleId): int
     {
-        return $this->model->destroy(decryptId($articleId));
-    }
-
-    /**
-     * @param array $articleDetails
-     * @return mixed
-     */
-    public function createArticle(array $articleDetails): mixed
-    {
-        return $this->model->create($articleDetails);
-    }
-
-    /**
-     * @param $articleId
-     * @param array $newDetails
-     * @return mixed
-     */
-    public function updateArticle($articleId, array $newDetails): mixed
-    {
-        return $this->model->whereId(decryptId($articleId))
-            ->update($newDetails);
+        return $this->delete(decryptId($articleId));
     }
 
     /**
@@ -91,16 +83,15 @@ class ArticleRepository implements ArticleRepositoryInterface
             return $articles->paginate($perPage);
         }
 
-        return $articles->get();
+        return $this->get();
     }
 
-    public function findById()
+    /**
+     * @param $articleId
+     * @return mixed
+     */
+    public function getArticleById($articleId): mixed
     {
-        // TODO: Implement findById() method.
-    }
-
-    public function get()
-    {
-        // TODO: Implement get() method.
+        return $this->model->findOrFail(decryptId($articleId));
     }
 }

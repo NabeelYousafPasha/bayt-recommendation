@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -16,9 +17,12 @@ class ArticleFactory extends Factory
      */
     public function definition(): array
     {
+        $users = User::pluck('id')->toArray();
+
         return [
             'title' => fake()->text,
-            'body' => fake()->text
+            'body' => fake()->text,
+            'user_id' => fake()->randomElement($users),
         ];
     }
 }

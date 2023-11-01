@@ -11,13 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('article_category', function (Blueprint $table) {
+        Schema::create('model_ratings', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('article_id')->unsigned();
-            $table->foreignId('category_id')->unsigned();
+            $table->morphs('rateable');
+            $table->foreignId('user_id')->constrained('users');
+            $table->unsignedSmallInteger('value');
+            $table->longText('comment')->nullable();
             $table->timestamps();
-
-            $table->index(['article_id', 'category_id']);
         });
     }
 
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('article_category');
+        Schema::dropIfExists('model_ratings');
     }
 };

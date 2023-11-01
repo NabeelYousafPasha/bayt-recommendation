@@ -2,17 +2,13 @@
 
 namespace App\Interfaces;
 
-interface ArticleRepositoryInterface extends BaseInterface
+interface ArticleRepositoryInterface
 {
     public function getAllArticles();
 
-    public function getArticleById($articleId);
-
-    public function createArticle(array $articleDetails);
+    public function getAllArticlesWithCategories();
 
     public function updateArticle($articleId, array $newDetails);
 
     public function deleteArticle($articleId);
-
-    public function getAllArticlesWithCategories();
 }

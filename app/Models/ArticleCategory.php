@@ -9,5 +9,8 @@ class ArticleCategory extends Model
 {
     use HasFactory;
 
+    /**
+     * @var string
+     */
     protected $table = 'article_category';
 }
