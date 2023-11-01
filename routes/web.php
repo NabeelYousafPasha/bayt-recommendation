@@ -1,8 +1,15 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\{
+    ArticleController,
+    HomeController,
+    ProfileController,
+};
+use App\Http\Middleware\{
+    Authenticate,
+    EnsureEmailIsVerified,
+};
 use Illuminate\Support\Facades\Route;
-use \App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,3 +35,14 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+Route::group([
+    'prefix' => 'articles',
+    'as' => 'articles.',
+    'middleware' => [
+        Authenticate::class,
+    ],
+], function () {
+   Route::get('/', [ArticleController::class, 'index'])->name('index');
+   Route::get('/{article}', [ArticleController::class, 'show'])->name('show');
+});
